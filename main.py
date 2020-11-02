@@ -13,8 +13,8 @@ device = devices[0]
 # Guardar una captura de pantalla y
 # cargarla usando PIL:
 result = device.screencap()
-with open("", "wb") as fp:
+with open("screen.png", "wb") as fp:
     fp.write(result)
-im = Image.open("")
+im = Image.open("screen.png")
 
 # implmentar las coordenadas del sudoku
