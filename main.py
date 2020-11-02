@@ -17,4 +17,13 @@ with open("screen.png", "wb") as fp:
     fp.write(result)
 im = Image.open("screen.png")
 
-# implmentar las coordenadas del sudoku
+# Coordenadas de inicio del sudoku en el
+# dsipositivo (MOD):
+x, y = 18, 230
+
+# Dimensiones de cada casilla:
+dx, dy = 108, 108
+
+# Variable que nos permite determinar si se
+# realizará alguna acción en el dispositivo
+impr = 0
