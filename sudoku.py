@@ -1,16 +1,18 @@
-board = [[3, 0, 6, 5, 0, 8, 4, 0, 0],
-         [5, 2, 0, 0, 0, 0, 0, 0, 0],
-         [0, 8, 7, 0, 0, 0, 0, 3, 1],
-         [0, 0, 3, 0, 1, 0, 0, 8, 0],
-         [9, 0, 0, 8, 6, 3, 0, 0, 5],
-         [0, 5, 0, 0, 9, 0, 6, 0, 0],
-         [1, 3, 0, 0, 0, 0, 2, 5, 0],
-         [0, 0, 0, 0, 0, 0, 0, 7, 4],
-         [0, 0, 5, 2, 0, 6, 3, 0, 0]]
+#board = [[3, 0, 6, 5, 0, 8, 4, 0, 0],
+#         [5, 2, 0, 0, 0, 0, 0, 0, 0],
+#         [0, 8, 7, 0, 0, 0, 0, 3, 1],
+#         [0, 0, 3, 0, 1, 0, 0, 8, 0],
+#         [9, 0, 0, 8, 6, 3, 0, 0, 5],
+#         [0, 5, 0, 0, 9, 0, 6, 0, 0],
+#         [1, 3, 0, 0, 0, 0, 2, 5, 0],
+#         [0, 0, 0, 0, 0, 0, 0, 7, 4],
+#         [0, 0, 5, 2, 0, 6, 3, 0, 0]]
 
 
 # Método que resuelve el sudoku:
 def sudoku_solver(matrix):
+    if not initial_valid(matrix):
+        return False
     find = find_empty_place(matrix)
     if not find:
         # Caso base cuando no hay casillas vacías.
@@ -35,6 +37,66 @@ def sudoku_solver(matrix):
             matrix[row][col] = 0
 
     return False
+
+
+# Método que revisa si es posible resolver el sudoku o no:
+def initial_valid(matrix):
+    for row in range(0, 8):
+        for col in range(0, 8):
+            if matrix[row][col] != 0:
+                if not is_valid_2(matrix, row, col, matrix[row][col]):
+                    return False
+    return True
+
+
+# Verificar si "num" ya esta presente en otra columna
+# de manera inicial:
+def verify_column_init(matrix, column, num):
+    cont = 0
+    for row in range(0, 8):
+        if matrix[row][column] == num:
+            cont = cont + 1
+            if cont > 1:
+                return True
+
+    return False
+
+
+# Verificar si "num" ya esta presente en otra fila
+# de manera inicial:
+def verify_row_init(matrix, row, num):
+    cont = 0
+    for column in range(0, 8):
+        if matrix[row][column] == num:
+            cont = cont + 1
+            if cont > 1:
+                return True
+
+    return False
+
+
+# Verificar si "num" ya esta presente en otra de
+# las cuadrículas 3x3, de manera inicial
+def verify_3_x_3_box_init(matrix, start_row, start_col, num):
+    cont = 0
+    for row in range(0, 3):
+        for column in range(0, 3):
+            if matrix[row + start_row][column + start_col] == num:
+                cont = cont + 1
+                if cont > 1:
+                    return True
+
+    return False
+
+
+# Llamamos a los métodos que verifican existe algún
+# número que cause conflicto:
+def is_valid_2(matrix, row, col, num):
+    valid_pro1 = not verify_column_init(matrix, col, num)
+    valid_pro2 = not verify_row_init(matrix, row, num)
+    valid_pro3 = not verify_3_x_3_box_init(matrix, row - row % 3, col - col % 3, num)
+    valid_pro = valid_pro1 + valid_pro2 + valid_pro3
+    return valid_pro
 
 
 # Encuentra una casilla "vacia" y actualiza row
@@ -84,6 +146,7 @@ def valid(matrix, row, col, num):
                 not verify_3_x_3_box(matrix, row - row % 3, col - col % 3, num)
     return valid_pro
 
+
 # Imprimimos el sudoku en pantallla
 def print_board(matrix):
     for i in range(len(matrix)):
@@ -100,7 +163,7 @@ def print_board(matrix):
                 print("[" + str(matrix[i][j]) + "]", end="")
 
 
-print_board(board)
-sudoku_solver(board)
-print("_________________________")
-print_board(board)
+#print_board(board)
+#sudoku_solver(board)
+#print("_________________________")
+#print_board(board)
