@@ -61,3 +61,5 @@ for j in range(1, 10):
     y += dy + (11 if j % 3 == 0 else 6)
     mat.append(grid_row)
     touch_mat.append(t_row)
+
+#Verificar y avisar en la pantalla si se puede resolver
