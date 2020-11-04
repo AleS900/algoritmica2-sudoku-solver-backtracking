@@ -13,7 +13,6 @@ if len(devices) == 0:
     quit()
 device = devices[0]
 
-
 # Guardar una captura de pantalla y
 # cargarla usando PIL:
 result = device.screencap()
@@ -62,4 +61,15 @@ for j in range(1, 10):
     mat.append(grid_row)
     touch_mat.append(t_row)
 
-#Verificar y avisar en la pantalla si se puede resolver
+# Resolver e imprimir en pantalla el sudoku si es que este se puede resolver,
+# caso contrario se imprime en pantalla el mensaje que indica que el sudoku
+# no es solucionable y cambia el valor de "impr" a 1 para que ninguna acción
+# sea ralizada en pantalla:
+orig_grid = copy.deepcopy(mat)
+if sudoku_solver(mat):
+    print_board(mat)
+else:
+    print("No existe solución")
+    impr = 1
+
+# detecatar las coordenadas de las casillas
