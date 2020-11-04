@@ -78,4 +78,18 @@ else:
 def click(i, j):
     device.shell(f'input touchscreen tap {touch_mat[i][j][0]} {touch_mat[i][j][1]}')
 
-# realizar clicks encima de los botones
+# Función que permite al programa realizar un "click" encima de cada valor asignable
+# al Sudoku utilizando sus coordenas, en caso de esta la app utilizada en este
+# proyecto los valores del 1 al 5 se encuentran en la misma fila, por tanto:
+def select1to5(n):
+    arr = [125, 314, 566, 756, 970]
+    device.shell(f'input touchscreen tap {arr[n - 1]} 1342')
+
+# Función que permite al programa realizar un "click" encima de cada valor asignable
+# al Sudoku utilizando sus coordenas, en caso de esta la app utilizada en este
+# proyecto los valores del 6 al 9 se encuentran en la misma fila, por tanto:
+def select6to9(n):
+    arr = [125, 314, 566, 756]
+    device.shell(f'input touchscreen tap {arr[n - 6]} 1545')
+
+# falta actualizar los valores de la pantalla y ya
