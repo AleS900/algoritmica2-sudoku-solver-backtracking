@@ -72,4 +72,10 @@ else:
     print("No existe solución")
     impr = 1
 
-# detecatar las coordenadas de las casillas
+
+# Función que permite al programa detectar las coordenadas de cada casilla y
+# y realizar un "click" sobre las mismas:
+def click(i, j):
+    device.shell(f'input touchscreen tap {touch_mat[i][j][0]} {touch_mat[i][j][1]}')
+
+# realizar clicks encima de los botones
