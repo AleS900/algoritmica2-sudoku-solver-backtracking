@@ -13,6 +13,7 @@ if len(devices) == 0:
     quit()
 device = devices[0]
 
+
 # Guardar una captura de pantalla y
 # cargarla usando PIL:
 result = device.screencap()
@@ -72,7 +73,6 @@ else:
     print("No existe solución")
     impr = 1
 
-
 # Función que permite al programa detectar las coordenadas de cada casilla y
 # y realizar un "click" sobre las mismas:
 def click(i, j):
@@ -92,4 +92,19 @@ def select6to9(n):
     arr = [125, 314, 566, 756]
     device.shell(f'input touchscreen tap {arr[n - 6]} 1545')
 
-# falta actualizar los valores de la pantalla y ya
+
+# Actualizar los valores en pantalla,realizando una serie de "clicks" en la misma,
+# comenzando con la casilla y luego con el valor que debe ir en la misma, solamente
+# se seleccionan las casillas que originalmente estaban vacías:
+if impr == 0:
+    for i in range(len(mat)):
+        for j in range(len(mat[0])):
+            # Se define si la casilla estaba originalmente vacía
+            if orig_grid[i][j] == 0:
+                # Se selecciona la casilla
+                click(i, j)
+                # Se selecciona el valor de la casilla
+                if mat[i][j] < 6:
+                    select1to5(mat[i][j])
+                else:
+                    select6to9(mat[i][j])
