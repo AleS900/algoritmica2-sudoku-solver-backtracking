@@ -2,7 +2,7 @@
 Programa realizado en la versión de Python 3.9, el cual tiene la capacidad de resolver un sudoku de una aplicación **Sudoku** para Android, sin importar cual sea esta (El programa actual está configurado para la siguiente [aplicación](https://play.google.com/store/apps/details?id=le.lenovo.sudoku)).<br/>
 Se toma un screenshot del juego (se obtiene una imagen de 720x1280), luego se extrae información útil a partir de visión artificial y posteriormente se analiza con un algoritmo de satisfacción de restricciones con backtracking.<br/>
 ## Nociones Básicas
-To el mundo sabe que es un Sudoku y sus reglas básicas, sin embargo presentamos la noción básica del mismo:
+Todo el mundo sabe que es un Sudoku y sus reglas básicas, sin embargo presentamos la noción básica del mismo:
 
 -  Un Sudoku es básicamente una cuadrícula de 9x9 casillas dividida en 9 cuadrados de 3x3 casillas.
 -  Los valores que puede contener una casilla son 1, 2, 3, 4, 5, 6, 7, 8 o 9.
@@ -21,4 +21,4 @@ To el mundo sabe que es un Sudoku y sus reglas básicas, sin embargo presentamos
 ## Ejecutar el Programa
 1. Primero clonamos el actual repistorio, o descargamos el mismo como un archivo comprimido.
 2. Luego, en nuestro _IDE_ realizamos una busqueda de nuestro achivo y abrimos su ubicación.
-3. Realizamos una descarga de las librerias adicionales que se encunetran sitadas en el archivo 'requeirments'.
+3. Realizamos una descarga de las librerias adicionales que se encunetran sitadas en el archivo `requeirments.txt`, a través del comando `pip install "Ingresar Rqeuerimiento"`.
