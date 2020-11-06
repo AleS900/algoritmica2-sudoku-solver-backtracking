@@ -4,3 +4,4 @@ Se toma un screenshot del juego (se obtiene una imagen de 720x1280), luego se ex
 
 ## Requisitos Iniciales
 -  Tener instalado un [kit de desarrollo](https://www.python.org/downloads/) (SDK) de Python, se recomienda la última versión del mismo. 
+-  Tener instalado el sistema de gestión de paquetes [**pip**](https://phoenixnap.com/kb/install-pip-windows), utilizado para instalar y administrar paquetes de software escritos en Python. 
