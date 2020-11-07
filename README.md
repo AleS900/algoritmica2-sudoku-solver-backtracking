@@ -25,4 +25,9 @@ Todo el mundo sabe que es un Sudoku y sus reglas básicas, sin embargo presentam
 5. Conectar el dispositivo android desde el cual se trabajará.
 6. Eejcutar el comando `scrcpy` en la carpeta donde se intalo dicho recurso, par poder tener la pantalla del dispositivo en nuestro monitor.
 7. Ejecutar el método `main` o ejecutar desde el símbolo de sistema `python ./main.py`.
-8. **Opcional**: Si es que se desea la cambiar la aplicación por defecto configurada en el código cambiar los puntos indicados con la palabra `TO_MOD`, asignando a las variables correspondientes los datos indicados.
+8. **Opcional**: Si es que se desea la cambiar la aplicación por defecto configurada en el código cambiar los puntos indicados con la palabra `TO_MOD`, asignando a las variables correspondientes los datos indicados.<br/>
+## ¿Cómo Funciona?
+-   Realiza el análisis del Sudoku con el que se trabajará, verificando primero si este es válido, para luego a través y gracias al uso del Backtracking, solucionar el mismo e imprimirlo en pantalla.<br/>
+`main.py`
+-   Extrae cada cuadrado de sudoku individualmente y los guarda secuencialmente en una matriz de datos, y ejecutando en el proceso el análisis correpondiente del sudoku y mostrando el resultado en pantalla; **ejecuta todo el programa**.<br/>
+`sudoku.py`
