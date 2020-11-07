@@ -14,8 +14,7 @@ Todo el mundo sabe que es un Sudoku y sus reglas básicas, sin embargo presentam
 -  Tener instalado el [sistema de gestión de paquetes **pip**](https://phoenixnap.com/kb/install-pip-windows), utilizado para instalar y administrar paquetes de software escritos en Python.
 -  Tener instalado el marco de automatización de pruebas **Gauge** y un **IDE** de preferencia (se sugiere la instalación de **IntelliJ IDEA**), puede encontrar ayuda con la intalación de los mismos [aquí](https://medium.com/automationmaster/installing-gauge-and-intellij-idea-community-edition-287e70635477).
 -  Estar seguro de tener [habilitada la opción de adb debbuging](https://developer.android.com/studio/command-line/adb.html#Enabling) en el dispositivo móvil a utilizar.
--  Tener intalada la aplicación de visualización y control de dispositivos vía USB [Scrcpy](https://github.com/Genymobile/scrcpy) (**Opcional**).
--  (???)https://github.com/tesseract-ocr/tesseract/wiki#installation  
+-  Tener intalada la aplicación de visualización y control de dispositivos vía USB [Scrcpy](https://github.com/Genymobile/scrcpy) (**Opcional**). 
 -  Tener instalado (**Tesseract**)[https://github.com/UB-Mannheim/tesseract/wiki], el cual es un motor de reconocimiento de texto que extrae el mismo de imagenes impresas.
 -  Agregar a nuestras variables de entorno de Windows todas las _dependencias_ de los anteriores pasos si es que no estuvieran ya configuradas.<br/>
 ## Ejecutar el Programa
